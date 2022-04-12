@@ -10,6 +10,7 @@
 - node
 - pynvim
 - [prettier](https://prettier.io/)
+- xclip
 
 ## Installation
 1. install zsh
