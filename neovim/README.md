@@ -11,6 +11,8 @@
 - pynvim
 - [prettier](https://prettier.io/)
 - xclip
+- ack-grep
+- neovim latest
 
 ## Installation
 1. install zsh

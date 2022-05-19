@@ -43,6 +43,12 @@ colorscheme dracula
 "-----------------------------------------
 " 
 "
+""-----------------------------------------
+" > Load
+"-----------------------------------------
+let g:loaded_ruby_provider = 1
+let g:loaded_perl_provider = 1
+
 "-----------------------------------------
 " > Leader
 "-----------------------------------------
@@ -83,3 +89,17 @@ nnoremap <C-s> :update<cr>
 
 "Quite the window
 nnoremap <C-c> :quit
+
+"-----------------------------------------
+" > Split
+"-----------------------------------------
+map <leader>vp :vsplit<cr>
+map <leader>hp :split<cr>
+
+"-----------------------------------------
+" > Move line
+"-----------------------------------------
+nnoremap <S-w> :<C-u>silent! move-2<CR>==
+nnoremap <S-s> :<C-u>silent! move+<CR>==
+xnoremap <S-w> :<C-u>silent! '<,'>move-2<CR>gv=gv
+xnoremap <S-s> :<C-u>silent! '<,'>move'>+<CR>gv=gv

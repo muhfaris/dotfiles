@@ -6,7 +6,7 @@ Plug 'junegunn/vim-easy-align'"
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "
 " " Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 "
 " " On-demand loading
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -50,7 +50,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
+"Plug 'kelixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
+Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 Plug 'Yggdroot/indentLine'
 "post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
@@ -58,6 +59,10 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 Plug 'f-person/git-blame.nvim'
 Plug 'airblade/vim-rooter'
+
+" React code snippets
+Plug 'epilande/vim-react-snippets'
+
 " " Initialize plugin system
 call plug#end()
 
