@@ -7,4 +7,4 @@ autocmd FileType markdowm nmap <M-s> <Plug>MarkdownPreviewStop
 autocmd FileType markdowm nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " default: ''
-let g:mkdp_browser = 'brave'
+let g:mkdp_browser = 'brave-browser'
