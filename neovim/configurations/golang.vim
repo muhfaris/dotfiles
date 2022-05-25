@@ -5,6 +5,7 @@
 let g:go_fmt_command = "goimports"
 let g:go_def_mode = "gopls"
 let g:go_info_mode = "gopls"
+let g:go_implements_mode = 'gopls'
 let g:go_gopls_gofumpt = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -31,11 +32,53 @@ endfunction
 
 " Map keys for most used commands.
 " `\b` for building, `\r` for running and `\b` for running test.
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
-autocmd FileType go nnoremap <C-[> :GoImplements<cr>
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
+"autocmd FileType go nmap <Leader>i <Plug>(go-info)
+"autocmd FileType go nmap <C-[> <Plug>(go-def-tab)
+"autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+"autocmd FileType go nmap <leader>r  <Plug>(go-run)
+"autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+" mappings for vim-go
+" autocmd FileType go nmap <Leader>i <Plug>(go-info)
+augroup go
+  autocmd!
+
+  " Show by default 4 spaces for a tab
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+
+  " :GoBuild and :GoTestCompile
+  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+  " :GoTest
+  autocmd FileType go nmap <leader>ts  <Plug>(go-test)
+
+  " :GoRun
+  autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
+  " :GoDoc
+  autocmd FileType go nmap <Leader>c <Plug>(go-doc)
+
+  " :GoInfo
+  autocmd FileType go nmap <Leader>i <Plug>(go-info)
+
+  " :GoDef but opens in a vertical split
+  autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+
+  " :GoDef but opens in a horizontal split
+  autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
+
+  " :GoDef but in tab
+  autocmd FileType go nmap <Leader>db <Plug>(go-def-tab)
+  
+  autocmd FileType go nmap <Leader>dc <Plug>(go-implements)
+
+
+  " :GoAlternate  commands :A, :AV, :AS and :AT
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+augroup END
 
 if executable('gopls')
     au User lsp_setup call lsp#register_server({

@@ -16,6 +16,7 @@ source ~/.config/nvim/configurations/indentline.vim
 source ~/.config/nvim/configurations/prettier.vim
 source ~/.config/nvim/configurations/vim_root.vim
 source ~/.config/nvim/configurations/ultisnip.vim
+source ~/.config/nvim/configurations/vimspector.vim
 
 " lua files
 luafile ~/.config/nvim/lua/telescope.lua
