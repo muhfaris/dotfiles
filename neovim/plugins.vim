@@ -2,8 +2,6 @@ let &packpath = &runtimepath
 call plug#begin('~/.config/nvim/plugged')
 " " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'"
-" " Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "
 " " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips'
@@ -41,7 +39,7 @@ Plug 'mileszs/ack.vim'
 Plug 'buoto/gotests-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 
@@ -57,12 +55,32 @@ Plug 'Yggdroot/indentLine'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-Plug 'f-person/git-blame.nvim'
 Plug 'airblade/vim-rooter'
+
+" GIT
+Plug 'lewis6991/gitsigns.nvim'
 
 " React code snippets
 Plug 'epilande/vim-react-snippets'
 
-" " Initialize plugin system
+Plug 'preservim/tagbar'
+
+Plug 'mzlogin/vim-markdown-toc'
+
+" HTML
+ " Initialize plugin system
+ 
+ " NVIM
+Plug 'lewis6991/impatient.nvim'
+
+" Comment code
+Plug 'numToStr/Comment.nvim'
+
+" vim starter
+Plug 'mhinz/vim-startify'
+
+" Float terminal
+Plug 'voldikss/vim-floaterm'
+
 call plug#end()
 

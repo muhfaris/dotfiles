@@ -5,30 +5,8 @@ let g:vimspector_sidebar_width = 80
 let g:vimspector_code_minwidth = 85
 let g:vimspector_terminal_minwidth = 75
 
-function! s:CustomiseUI()
-  " Customise the basic UI...
-
-  " Close the output window
-  call win_gotoid( g:vimspector_session_windows.output )
-  q
-endfunction
-
-function s:SetUpTerminal()
-  " Customise the terminal window size/position
-  " For some reasons terminal buffers in Neovim have line numbers
-  call win_gotoid( g:vimspector_session_windows.terminal )
-  set norelativenumber nonumber
-endfunction
-
-augroup MyVimspectorUICustomistaion
-  autocmd!
-  autocmd User VimspectorUICreated call s:CustomiseUI()
-  autocmd User VimspectorTerminalOpened call s:SetUpTerminal()
-augroup END
-
-nmap <Leader>bb <Plug>VimspectorToggleBreakpoint
-nmap <Leader>br <Plug>VimpectorRestart
-nmap <Leader>bp <Plug>VimspectorStop
-nmap <Leader>bc <Plug>VimspectorContinue
-
+nnoremap <Leader>bl :call vimspector#Launch()<CR>
+nnoremap <Leader>br :call vimspector#Reset()<CR>
+nnoremap <Leader>bc :call vimspector#Continue()<CR>
+nnoremap <Leader>bb :call vimspector#ToggleBreakpoint()<CR>
 
