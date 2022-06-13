@@ -18,10 +18,12 @@ source ~/.config/nvim/configurations/ultisnip.vim
 source ~/.config/nvim/configurations/vimspector.vim
 source ~/.config/nvim/configurations/tagbar.vim
 source ~/.config/nvim/configurations/vim_startify.vim
+source ~/.config/nvim/configurations/floaterm.vim
 
 " lua files
 luafile ~/.config/nvim/lua/telescope.lua
 luafile ~/.config/nvim/lua/impatient.nvim.lua
 luafile ~/.config/nvim/lua/gitsigns.nvim.lua
 luafile ~/.config/nvim/lua/comment.nvim.lua
+luafile ~/.config/nvim/lua/which_key.lua
 

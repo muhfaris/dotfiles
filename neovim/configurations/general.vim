@@ -88,13 +88,13 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 nnoremap <C-s> :update<cr>
 
 "Quite the window
-nnoremap <C-c> :quit
+nnoremap <C-c> :quit<cr>
 
 "-----------------------------------------
 " > Split
 "-----------------------------------------
-map <leader>vp :vsplit<cr>
-map <leader>hp :split<cr>
+map <leader>sv :vsplit<cr>
+map <leader>sh :split<cr>
 
 "-----------------------------------------
 " > Move line
