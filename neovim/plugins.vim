@@ -83,6 +83,7 @@ Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 
 " which key
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'folke/which-key.nvim'
 
 call plug#end()
+
