@@ -86,13 +86,13 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 "Ack ignore vendor
 nnoremap <C-a> "hy:Ack "" --ignore-dir=vendor
-vnoremap <C-a> "hy:Ack "<C-r>h" --ignore-dir=vendor
+vnoremap <C-a> "hy:Ack "<C-r>h/" --ignore-dir=vendor
 
 "Save
 nnoremap <C-s> :update<cr>
 
 "Quite the window
-nnoremap <C-c> :quit<cr>
+nnoremap <C-q> :quit<cr>
 
 "-----------------------------------------
 " > Split

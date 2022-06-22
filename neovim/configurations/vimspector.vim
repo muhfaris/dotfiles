@@ -1,4 +1,5 @@
 let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_base_dir=expand( '$HOME/.config/nvim/vimspector' )
 
 " Set the basic sizes
 let g:vimspector_sidebar_width = 80

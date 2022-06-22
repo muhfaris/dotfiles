@@ -13,6 +13,8 @@
 - xclip
 - ack-grep
 - neovim latest
+- yamllint (sudo apt-get install yamllint)
+- [neomake](https://github.com/neomake/neomake)
 
 ## Optional
 - brave-browser (for markdown preview)

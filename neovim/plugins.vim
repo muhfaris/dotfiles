@@ -85,5 +85,8 @@ Plug 'voldikss/vim-floaterm'
 " which key
 Plug 'folke/which-key.nvim'
 
+" neomake
+Plug 'neomake/neomake'
+
 call plug#end()
 

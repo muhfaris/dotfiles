@@ -19,6 +19,8 @@ source ~/.config/nvim/configurations/vimspector.vim
 source ~/.config/nvim/configurations/tagbar.vim
 source ~/.config/nvim/configurations/vim_startify.vim
 source ~/.config/nvim/configurations/floaterm.vim
+source ~/.config/nvim/configurations/yaml.vim
+source ~/.config/nvim/configurations/neomake.vim
 
 " lua files
 luafile ~/.config/nvim/lua/telescope.lua
