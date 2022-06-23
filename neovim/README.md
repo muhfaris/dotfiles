@@ -72,3 +72,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 - Javascript
 - PHP
 - Python
+
+## Debugging use Vimspector
+```
+./install_gadget.py --basedir $HOME/.config/nvim/vimspector --all --force-all
+```
