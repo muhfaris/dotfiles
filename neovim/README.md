@@ -15,6 +15,7 @@
 - neovim latest
 - yamllint (sudo apt-get install yamllint)
 - [neomake](https://github.com/neomake/neomake)
+- [shellcheck](https://github.com/koalaman/shellcheck#installing)
 
 ## Optional
 - brave-browser (for markdown preview)
@@ -65,6 +66,19 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
     export GOBIN=$GOPATH/bin
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
+
+## Config git
+Add this config, change to your directory
+
+```yaml
+
+[core]
+    hooksPath = /home/muhfaris/.githooks
+
+```
+
+or run the command:
+`git config --global core.hooksPath /home/muhfaris/.githooks`
 
 
 ## Language Support & Autocomplete
