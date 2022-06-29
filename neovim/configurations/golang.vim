@@ -17,6 +17,9 @@ let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 let g:go_term_mode = "vsplit"
 let g:go_term_enabled = 1
+let g:go_doc_popup_window = 1
+let g:go_fillstruct_mode = 'gopls'
+let g:go_def_reuse_buffer = 1
 
 
 
@@ -49,28 +52,21 @@ augroup go
   " :GoBuild and :GoTestCompile
   autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
-  " :GoTest
-  autocmd FileType go nmap <leader>ts  <Plug>(go-test)
+  autocmd FileType go nmap <leader>gf  <Plug>(go-test-func)
+  autocmd FileType go nmap <leader>gr  <Plug>(go-run)
+  autocmd FileType go nmap <Leader>gc <Plug>(go-doc)
+  autocmd FileType go nmap <Leader>gi <Plug>(go-info)
 
-  " :GoRun
-  autocmd FileType go nmap <leader>r  <Plug>(go-run)
-
-  " :GoDoc
-  autocmd FileType go nmap <Leader>c <Plug>(go-doc)
-
-  " :GoInfo
-  autocmd FileType go nmap <Leader>i <Plug>(go-info)
-
-  " :GoDef but opens in a vertical split
   autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-
-  " :GoDef but opens in a horizontal split
   autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
-
-  " :GoDef but in tab
   autocmd FileType go nmap <Leader>db <Plug>(go-def-tab)
-  
   autocmd FileType go nmap <Leader>dc <Plug>(go-implements)
+
+  autocmd FileType go nmap <Leader>gr <Plug>(go-rename)
+  autocmd FileType go nnoremap <Leader>gs :GoFillStruct<CR>
+  autocmd FileType go nnoremap <Leader>ge :GoIfErr<CR>
+  autocmd FileType go nnoremap <Leader>gp :GoPlay<CR>
+
 
 
   " :GoAlternate  commands :A, :AV, :AS and :AT

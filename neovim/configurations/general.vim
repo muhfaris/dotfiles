@@ -86,7 +86,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 "Ack ignore vendor
 nnoremap <C-a> "hy:Ack "" --ignore-dir=vendor
-vnoremap <C-a> "hy:Ack "" --ignore-dir=vendor
+vnoremap <C-a> "hy:Ack "<C-r>h/" --ignore-dir=vendor
 
 "Save
 nnoremap <C-s> :update<cr>
@@ -107,3 +107,38 @@ nnoremap <S-w> :<C-u>silent! move-2<CR>==
 nnoremap <S-s> :<C-u>silent! move+<CR>==
 xnoremap <S-w> :<C-u>silent! '<,'>move-2<CR>gv=gv
 xnoremap <S-s> :<C-u>silent! '<,'>move'>+<CR>gv=gv
+
+"-----------------------------------------
+" > Move split
+"-----------------------------------------
+" ctrl-w J moves the active to the bottom
+" ctrl-w H moves the active split to the left
+" ctrl-w K moves the active split to the top
+" ctrl-w L moves the active split to right
+" ctrl-w r rotates splits to the right/down
+" ctrl-w R rotates splits to the left/up
+
+
+"-----------------------------------------
+" > Move split
+"-----------------------------------------
+"5 <Ctrl-w> > – Makes left split 5 columns wider
+"10 <Ctrl-w> < – Makes left split 10 columns narrower
+"<Ctrl-w> J – Move current split to the bottom.
+"5 <Ctrl-w> – Make bottom split 5 rows shorter
+"10 <Ctrl-w> + – Make bottom split 10 rows taller
+"<Ctrl-w> = – Equalize splits again
+
+"-----------------------------------------
+" > Reselect Paste
+"-----------------------------------------
+nnoremap gp `[v`]
+
+"-----------------------------------------
+" > Insert mode edit mappings
+"-----------------------------------------
+"ctrl-h – Delete previous character (same as backspace)
+"ctrl-w – Delete previous word
+"ctrl-u – Delete entire line (except any indent)
+"ctrl-t – Indent the current line
+"ctrl-d – Backdent the current line
