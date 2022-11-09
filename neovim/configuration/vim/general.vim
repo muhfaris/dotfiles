@@ -38,7 +38,7 @@ filetype indent on
 
 " color terminal
 set t_Co=256
-colorscheme dracula
+""colorscheme dracula
 
 " syntax highlighting
 syntax on

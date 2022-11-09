@@ -21,3 +21,4 @@ luafile ~/.config/nvim/configuration/lua/telescope.lua
 luafile ~/.config/nvim/configuration/lua/nvim-comment.lua
 luafile ~/.config/nvim/configuration/lua/tabby.lua
 luafile ~/.config/nvim/configuration/lua/which-key.lua
+luafile ~/.config/nvim/configuration/lua/dracula.lua
