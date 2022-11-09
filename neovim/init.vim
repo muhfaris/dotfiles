@@ -1,31 +1,23 @@
-" vim files
-source ~/.config/nvim/plugins.vim
-source ~/.config/nvim/configurations/general.vim
-source ~/.config/nvim/configurations/nerdtree.vim
-source ~/.config/nvim/configurations/lsp_general.vim
-source ~/.config/nvim/configurations/golang.vim
-source ~/.config/nvim/configurations/lsp_golang.vim
-source ~/.config/nvim/configurations/telescope.vim
-source ~/.config/nvim/configurations/json.vim
-source ~/.config/nvim/configurations/markdown.vim
-source ~/.config/nvim/configurations/lsp_python.vim
-source ~/.config/nvim/configurations/lsp_javascript.vim
-source ~/.config/nvim/configurations/lsp_php.vim
-source ~/.config/nvim/configurations/indentline.vim
-source ~/.config/nvim/configurations/prettier.vim
-source ~/.config/nvim/configurations/vim_root.vim
-source ~/.config/nvim/configurations/ultisnip.vim
-source ~/.config/nvim/configurations/vimspector.vim
-source ~/.config/nvim/configurations/tagbar.vim
-source ~/.config/nvim/configurations/vim_startify.vim
-source ~/.config/nvim/configurations/floaterm.vim
-source ~/.config/nvim/configurations/yaml.vim
-source ~/.config/nvim/configurations/neomake.vim
+source ~/.config/nvim/plugin.vim
+source ~/.config/nvim/configuration/vim/general.vim
+source ~/.config/nvim/configuration/vim/toggleterm.vim
+source ~/.config/nvim/configuration/vim/go.vim
+source ~/.config/nvim/configuration/vim/formatter.vim
+source ~/.config/nvim/configuration/vim/tagbar.vim
+source ~/.config/nvim/configuration/vim/telescope.vim
+source ~/.config/nvim/configuration/vim/nvim-comment.vim
+source ~/.config/nvim/configuration/vim/vimspector.vim
 
-" lua files
-luafile ~/.config/nvim/lua/telescope.lua
-luafile ~/.config/nvim/lua/impatient.nvim.lua
-luafile ~/.config/nvim/lua/gitsigns.nvim.lua
-luafile ~/.config/nvim/lua/comment.nvim.lua
-luafile ~/.config/nvim/lua/which_key.lua
-
+luafile ~/.config/nvim/configuration/lua/nvim-tree.lua
+luafile ~/.config/nvim/configuration/lua/devicons.lua
+luafile ~/.config/nvim/configuration/lua/toggleterm.lua
+luafile ~/.config/nvim/configuration/lua/go.lua
+luafile ~/.config/nvim/configuration/lua/nvim-cmp.lua
+luafile ~/.config/nvim/configuration/lua/lualine.lua
+luafile ~/.config/nvim/configuration/lua/nvim-lsp.lua
+luafile ~/.config/nvim/configuration/lua/formatter.lua
+luafile ~/.config/nvim/configuration/lua/gitsings.lua
+luafile ~/.config/nvim/configuration/lua/telescope.lua
+luafile ~/.config/nvim/configuration/lua/nvim-comment.lua
+luafile ~/.config/nvim/configuration/lua/tabby.lua
+luafile ~/.config/nvim/configuration/lua/which-key.lua

@@ -1,0 +1,5 @@
+---require("go").setup({
+---	notify = true,
+---	max_line_len = 300, -- max line length in golines format, Target maximum line length for golines
+---	auto_lint = true,
+---})
