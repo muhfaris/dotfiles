@@ -1,27 +1,28 @@
 {
-    "configurations": {
-        "Go": {
-            "adapter": "vscode-go",
-            "filetypes": ["go"],
-            "configuration": {
-                "request": "launch",
-                "program": "${workspaceRoot}/main.go",
-                "mode": "debug",
-                "trace": true,
-                "env": { "GO111MODULE": "off" }
-            }
-        },
-        "Local - main.go api": {
-            "adapter": "vscode-go",
-            "configuration": {
-                "request": "launch",
-                "program": "${PWD}/main.go",
-                "trace": true,
-                "showLog": true,
-                "mode": "debug",
-                "args": ["*${CommandLineArgs}"],
-                "env": { "GO111MODULE": "off" }
-            }
-        }
+  "configurations": {
+    "Go": {
+      "adapter": "vscode-go",
+      "filetypes": ["go"],
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/main.go",
+        "mode": "debug",
+        "trace": true,
+        "env": { "GO111MODULE": "off" }
+      }
+    },
+    "Go current project": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "launch",
+        "program": "${PWD}/main.go",
+        "trace": true,
+        "showLog": true,
+        "mode": "debug",
+        "args": ["*${CommandLineArgs}"],
+        "env": { "GO111MODULE": "on" },
+        "cwd": "${PWD}"
+      }
     }
+  }
 }
