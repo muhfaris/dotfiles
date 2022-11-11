@@ -22,6 +22,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
 
 " lsp
 Plug 'williamboman/mason.nvim'
@@ -72,5 +73,7 @@ Plug 'puremourning/vimspector'
 Plug 'nanozuki/tabby.nvim'
 
 Plug 'folke/which-key.nvim'
+
+Plug 'airblade/vim-rooter'
 call plug#end()
 

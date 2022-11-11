@@ -7,6 +7,8 @@ source ~/.config/nvim/configuration/vim/tagbar.vim
 source ~/.config/nvim/configuration/vim/telescope.vim
 source ~/.config/nvim/configuration/vim/nvim-comment.vim
 source ~/.config/nvim/configuration/vim/vimspector.vim
+source ~/.config/nvim/configuration/vim/emmet.vim
+source ~/.config/nvim/configuration/vim/vim-rooter.vim
 
 luafile ~/.config/nvim/configuration/lua/nvim-tree.lua
 luafile ~/.config/nvim/configuration/lua/devicons.lua

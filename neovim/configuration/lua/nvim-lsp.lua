@@ -17,7 +17,6 @@ require("mason-lspconfig").setup({
 		"html",
 		"jsonls",
 		"tsserver",
-		"phpactor",
 		"pyright",
 		"sqlls",
 		"taplo",
