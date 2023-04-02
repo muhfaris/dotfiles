@@ -1,47 +1,24 @@
-# dotiles
-- [x] neovim
+# Dotfile
 
-![image](https://user-images.githubusercontent.com/16787866/162878131-b1049229-4448-4437-814f-8db682bc4169.png)
+## Requirements
 
-## Git Config
-``` 
-# ~/.gitconfig
-[user]
-    email = muhfaris@disroot.org
-    name = Muhammad Faris
+- API key from chat GPT
+- [Dracula theme](https://draculatheme.com/vim)
 
-[merge]
-  tool = vimdiff
+## Nvim
 
-[mergetool]
-  prompt = true
-  keepBackup = false
+The nvim configuration file is config from [AstroNvim](https://github.com/AstroNvim/AstroNvim).
+You can use the config `nvim/lua/user` as custom configuration, copy and paste the folder into `nvim/lua/`.
 
-[mergetool "vimdiff"]
-  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+## Git commit
 
-[difftool]
-  prompt = false
+### Conventional Changelog
 
-[diff]
-  tool = vimdiff
+Help you to make a good commit to every project. I think is good habbit.
+Install the `commitizen` on global settings.
 
-[pull]
-    rebase = true
-
-[url "git@github.com:"]
-    insteadOf = https://github.com/
-[url "git@gitlab.com:"]
-    insteadOf = https://gitlab.com/
-[url "git@bitbucket.org:"]
-    insteadOf = https://bitbucket.org/
-
+```bash
+npm install -g commitizen
 ```
 
-## SSH Config 
-``` 
-# ~/.ssh/config
-Host gitlab.<company name>.tech
-  Preferredauthentications publickey
-  IdentityFile ~/.ssh/id_ed25519_<company>
-```
+last step, copy the configuration `root/czrc` and paste in your root system `/`, give a name `.czrc`.

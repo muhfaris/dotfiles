@@ -1,0 +1,13 @@
+{
+  "configurations": {
+    "Debug server side": {
+      "adapter": "vscode-node",
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/dist/index.js",
+        "cwd": "${PWD}",
+        "command": "npm run dev"
+      }
+    }
+  }
+}

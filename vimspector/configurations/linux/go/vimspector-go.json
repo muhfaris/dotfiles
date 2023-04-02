@@ -1,0 +1,78 @@
+{
+  "configurations": {
+    "Go main.go": {
+      "adapter": "vscode-go",
+      "filetypes": ["go"],
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/main.go",
+        "mode": "debug",
+        "trace": true,
+        "env": { "GO111MODULE": "off" }
+      }
+    },
+    "Go custom": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "launch",
+        "program": "${PWD}/main.go",
+        "trace": true,
+        "showLog": true,
+        "mode": "debug",
+        "args": ["*${CommandLineArgs}"],
+        "env": { "GO111MODULE": "on" },
+        "cwd": "${PWD}"
+      }
+    },
+    "Go Test": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "launch",
+        "program": "${fileDirname}",
+        "trace": true,
+        "showLog": true,
+        "mode": "test",
+        "env": { "GO111MODULE": "on" },
+        "cwd": "${PWD}"
+      }
+    },
+    "Attach Go Test": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "attach",
+        "program": "${fileDirname}",
+        "trace": "verbose",
+        "showLog": true,
+        "mode": "test",
+        "env": { "GO111MODULE": "on" },
+        "cwd": "${PWD}"
+      }
+    },
+    "Attach Current Dir (Local)": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "attach",
+        "program": "${fileDirname}",
+        "remotePath": "${fileDirname}",
+        "cwd": "${fileDirname}",
+        "mode": "local",
+        "processId": "${PID}",
+        "trace": "verbose"
+      }
+    },
+    "Attach Current Dir (Remote)": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "attach",
+        "program": "${fileDirname}",
+        "remotePath": "${fileDirname}",
+        "cwd": "${fileDirname}",
+        "mode": "remote",
+        "dlvToolPath": "$HOME/go/bin/dlv",
+        "trace": "verbose",
+        "host": "localhost",
+        "port": 4321
+      }
+    }
+  }
+}
