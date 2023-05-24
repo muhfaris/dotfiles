@@ -21,61 +21,126 @@ return function(_, opts)
     end
   end
 
-  mason_nvim_dap.setup(opts)
-  mason_nvim_dap.setup_handlers {
-    function(source_name)
-      -- Keep original functionality of `automatic_setup = true`
-      require "mason-nvim-dap.automatic_setup"(source_name)
-    end,
-    delve = function(source_name)
-      dap.adapters.delve = {
-        type = "server",
-        port = "${port}",
-        executable = {
-          command = vim.fn.stdpath "data" .. "/mason/bin/dlv",
-          args = { "dap", "-l", "127.0.0.1:${port}" },
-        },
-      }
+  mason_nvim_dap.setup {
+    opts,
+    handlers = {
+      -- function(config) require("mason-nvim-dap").default_setup(config) end,
+      -- go = function(config)
+      --   config.adapters {
+      --     {
+      --       type = "delve",
+      --       mode = "debug",
+      --       name = "Debug (Arguments)",
+      --       request = "launch",
+      --       program = "${workspaceFolder}/main.go",
+      --       args = get_arguments,
+      --     },
+      --   }
+      --
+      --   require("mason-nvim-dap").default_setup(config) -- don't forget this!
+      -- end,
+      delve = function(config)
+        dap.adapters.delve = {
+          type = "server",
+          port = "${port}",
+          executable = {
+            command = vim.fn.stdpath "data" .. "/mason/bin/dlv",
+            -- command = "/home/muhfaris/go/bin/dlv",
+            args = { "dap", "-l", "127.0.0.1:${port}" },
+          },
+        }
 
-      dap.configurations.go = {
-        {
-          type = "delve",
-          name = "Delve: Debug",
-          request = "launch",
-          program = "${file}",
-        },
-        {
-          type = "delve",
-          name = "Delve: Debug test", -- configuration for debugging test files
-          request = "launch",
-          mode = "test",
-          program = "${file}",
-        },
-        -- works with go.mod packages and sub packages
-        {
-          type = "delve",
-          name = "Delve: Debug test (go.mod)",
-          request = "launch",
-          mode = "test",
-          program = "./${relativeFileDirname}",
-        },
-        {
-          type = "delve",
-          mode = "debug",
-          name = "Debug (Arguments)",
-          request = "launch",
-          program = "${workspaceFolder}/main.go",
-          args = get_arguments,
-          -- args = function()
-          --   local args = vim.fn.input "Args: "
-          --   if args == "" then
-          --     return nil
-          --   else
-          --     return vim.split(args, " ", { trimempty = true })
-          --   end
-          -- end,
-        },
-      }
-    end,
+        dap.configurations.go = {
+          {
+            type = "delve",
+            name = "Delve main.go: Debug",
+            request = "launch",
+            program = "${workspaceFolder}/main.go",
+          },
+          -- {
+          --   type = "delve",
+          --   name = "Delve: Debug test", -- configuration for debugging test files
+          --   request = "launch",
+          --   mode = "test",
+          --   program = "${file}",
+          -- },
+          -- -- works with go.mod packages and sub packages
+          -- {
+          --   type = "delve",
+          --   name = "Delve: Debug test (go.mod)",
+          --   request = "launch",
+          --   mode = "test",
+          --   program = "./${relativeFileDirname}",
+          -- },
+          {
+            type = "delve",
+            mode = "debug",
+            name = "Debug (Arguments)",
+            request = "launch",
+            program = "${workspaceFolder}/main.go",
+            args = get_arguments,
+          },
+        }
+
+        require("mason-nvim-dap").default_setup(config) -- don't forget this!
+      end,
+    },
   }
+
+  -- mason_nvim_dap.default_setup {
+  --   function(source_name)
+  --     -- Keep original functionality of `automatic_setup = true`
+  --     require "mason-nvim-dap.automatic_setup" (source_name)
+  --   end,
+  --   delve = function(source_name)
+  --     dap.adapters.delve = {
+  --       type = "server",
+  --       port = "${port}",
+  --       executable = {
+  --         command = vim.fn.stdpath "data" .. "/mason/bin/dlv",
+  --         args = { "dap", "-l", "127.0.0.1:${port}" },
+  --       },
+  --     }
+  --
+  --     dap.configurations.go = {
+  --       {
+  --         type = "delve",
+  --         name = "Delve: Debug",
+  --         request = "launch",
+  --         program = "${file}",
+  --       },
+  --       {
+  --         type = "delve",
+  --         name = "Delve: Debug test", -- configuration for debugging test files
+  --         request = "launch",
+  --         mode = "test",
+  --         program = "${file}",
+  --       },
+  --       -- works with go.mod packages and sub packages
+  --       {
+  --         type = "delve",
+  --         name = "Delve: Debug test (go.mod)",
+  --         request = "launch",
+  --         mode = "test",
+  --         program = "./${relativeFileDirname}",
+  --       },
+  --       {
+  --         type = "delve",
+  --         mode = "debug",
+  --         name = "Debug (Arguments)",
+  --         request = "launch",
+  --         program = "${workspaceFolder}/main.go",
+  --         args = get_arguments,
+  --         -- args = function()
+  --         --   local args = vim.fn.input "Args: "
+  --         --   if args == "" then
+  --         --     return nil
+  --         --   else
+  --         --     return vim.split(args, " ", { trimempty = true })
+  --         --   end
+  --         -- end,
+  --       },
+  --     }
+  --   end,
+  -- }
 end

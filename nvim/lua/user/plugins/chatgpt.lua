@@ -42,6 +42,6 @@ return {
         "nvim-telescope/telescope.nvim",
       },
     },
-    lazy = false,
+    event = "User AstroFile",
   },
 }

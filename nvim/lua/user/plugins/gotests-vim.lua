@@ -1,4 +1,4 @@
 return {
   "buoto/gotests-vim",
-  lazy = false,
+  event = "User AstroFile",
 }
