@@ -22,3 +22,28 @@ npm install -g commitizen
 ```
 
 last step, copy the configuration `root/czrc` and paste in your root system `/`, give a name `.czrc`.
+
+### Multiple ssh key
+
+configurations for multiple ssh key and different repository project, in this case in github.
+
+```
+# GitLab.com
+Host github.com
+  HostName github.com
+  Preferredauthentications publickey
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+Host github.com-ahmad
+  HostName github.com
+  Preferredauthentications publickey
+  User git
+  IdentityFile ~/.ssh/id_ahmad
+```
+
+next step, set the url each repository
+
+```
+git remote set-url origin git@github.com-ahmad:ahmad/docker-config.git
+```
