@@ -10,6 +10,8 @@ return {
     ["yrW"] = { "yiW:s/\\C\\<<C-R>0\\>/" },
     ["yre"] = { "yie:s/\\C\\<<C-R>0\\>/" },
     ["yrE"] = { "yiE:s/\\C\\<<C-R>0\\>/" },
+    ["<leader>cn"] = { "<cmd>:CarbonNow<CR>", desc = "generate a new snippet to carbon" },
+    -- ["<leader>cx"] = { "<cmd>q<CR>", desc = "quit" },
   },
   v = {
     ["<A-j>"] = { ":m '>+1<cr>gv=gv", desc = "move line down" },
