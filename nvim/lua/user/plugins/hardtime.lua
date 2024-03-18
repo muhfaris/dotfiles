@@ -10,6 +10,13 @@ return {
       ["<PageDown>"] = { "", "i" },
     },
     restriction_mode = "hint",
+    restricted_keys = {
+      ["h"] = {},
+      ["j"] = {},
+      ["k"] = {},
+      ["l"] = {},
+    },
+    disable_mouse = false,
   },
   config = function(_, opts)
     require("hardtime").setup(opts)

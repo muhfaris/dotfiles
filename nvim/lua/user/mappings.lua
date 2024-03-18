@@ -13,6 +13,7 @@ return {
     ["<leader>cn"] = { "<cmd>:CarbonNow<CR>", desc = "Generate a new snippet to carbon" },
     ["<leader>tl"] = { "<cmd>:Telescope telescope-tabs list_tabs<cr>", desc = "Tab list" },
     ["<leader>pr"] = { "<cmd>:AstroReload<cr>", desc = "Reload config" },
+    ["<leader>fs"] = { "<cmd>GetCurrentFunctions<cr>", desc = "Get current function" },
 
     -- ["<leader>cx"] = { "<cmd>q<CR>", desc = "quit" },
   },
