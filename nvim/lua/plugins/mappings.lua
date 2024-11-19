@@ -33,14 +33,14 @@ return {
             end,
             desc = "List project",
           },
-          ["<C-j>"] = {
+          ["<alt-j>"] = {
             function()
               local moveline = require "moveline"
               moveline.down()
             end,
             desc = "Move line down",
           },
-          ["<C-k>"] = {
+          ["<alt-k>"] = {
             function()
               local moveline = require "moveline"
               moveline.up()
