@@ -109,31 +109,44 @@ return {
     },
     opts = {},
   },
-  -- {
-  --   "fatih/vim-go",
-  --   build = ":GoUpdateBinaries",
-  --   ft = "go",
-  --   event = "BufEnter *.go",
-  --   dependencies = {
-  --     "junegunn/fzf",
-  --   },
-  -- },
   {
-    "olexsmir/gopher.nvim",
+    "fatih/vim-go",
+    build = ":GoUpdateBinaries",
     ft = "go",
-    build = function()
-      if not require("lazy.core.config").spec.plugins["mason.nvim"] then
-        vim.print "Installing go dependencies..."
-        vim.cmd.GoInstallDeps()
-      end
-    end,
+    event = "BufEnter *.go",
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      { "williamboman/mason.nvim", optional = true }, -- by default use Mason for go dependencies
+      "junegunn/fzf",
     },
-    opts = {},
+    config = function(_, opts)
+      vim.g["go_doc_balloon"] = 1
+      vim.g["go_doc_popup_window"] = 1
+      vim.g["go_term_enabled"] = 1
+      vim.g["go_addtags_skip_unexported"] = 1
+      vim.g["go_highlight_operators"] = 1
+      vim.g["go_highlight_functions"] = 1
+      vim.g["go_highlight_function_parameters"] = 1
+      vim.g["go_highlight_function_calls"] = 1
+      vim.g["go_highlight_fields"] = 1
+      vim.g["go_highlight_diagnostic_errors"] = 1
+      vim.g["go_doc_keywordprg_enabled"] = 0
+    end,
   },
+  -- {
+  --   "olexsmir/gopher.nvim",
+  --   ft = "go",
+  --   build = function()
+  --     if not require("lazy.core.config").spec.plugins["mason.nvim"] then
+  --       vim.print "Installing go dependencies..."
+  --       vim.cmd.GoInstallDeps()
+  --     end
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     { "williamboman/mason.nvim", optional = true }, -- by default use Mason for go dependencies
+  --   },
+  --   opts = {},
+  -- },
   {
     "nvim-neotest/neotest",
     optional = true,
